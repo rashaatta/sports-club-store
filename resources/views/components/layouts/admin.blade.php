@@ -124,7 +124,7 @@
         ></div>
 
         <aside
-            class="fixed inset-y-0 start-0 z-50 flex w-[280px] translate-x-full flex-col bg-ink text-white transition-transform duration-300 lg:translate-x-0"
+            class="fixed inset-y-0 start-0 z-50 flex w-[280px] flex-col bg-ink text-white transition-transform duration-300 max-lg:ltr:-translate-x-full max-lg:rtl:translate-x-full"
             :class="sidebarOpen ? 'translate-x-0!' : ''"
             aria-label="{{ __('admin.brand.panel') }}"
         >
@@ -180,6 +180,11 @@
             </nav>
 
             <div class="shrink-0 border-t border-white/10 p-4">
+                <div class="mb-3 flex items-center justify-between gap-2 rounded-lg bg-white/5 px-3 py-1.5">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-white/35">{{ __('ui.language.label') }}</span>
+                    <x-language-switcher variant="dark" />
+                </div>
+
                 <div class="flex items-center gap-3 rounded-xl bg-white/5 p-3">
                     <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-volt text-sm font-black text-ink">{{ mb_substr($user?->name ?? '', 0, 1) }}</span>
                     <span class="min-w-0 flex-1">

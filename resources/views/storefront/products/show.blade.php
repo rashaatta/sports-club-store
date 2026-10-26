@@ -148,7 +148,7 @@
                                     @click="previous()"
                                     aria-label="{{ __('storefront.product.gallery_previous') }}"
                                 >
-                                    <x-store.icon name="chevron-end" class="size-4" />
+                                    <x-store.icon name="chevron-end" class="size-4 ltr:-scale-x-100" />
                                 </button>
                                 <button
                                     type="button"
@@ -156,7 +156,7 @@
                                     @click="next()"
                                     aria-label="{{ __('storefront.product.gallery_next') }}"
                                 >
-                                    <x-store.icon name="chevron-start" class="size-4" />
+                                    <x-store.icon name="chevron-start" class="size-4 ltr:-scale-x-100" />
                                 </button>
                             </div>
                         </div>
@@ -204,10 +204,10 @@
                                 <img :src="current.full || current.src" :alt="current.alt" class="max-h-[82vh] w-auto rounded-xl object-contain">
                                 <div x-show="images.length > 1" class="absolute inset-y-0 inset-x-0 flex items-center justify-between">
                                     <button type="button" class="inline-flex size-11 items-center justify-center rounded-full bg-white/90 text-ink transition hover:bg-volt" @click="previous()" aria-label="{{ __('storefront.product.gallery_previous') }}">
-                                        <x-store.icon name="chevron-end" class="size-5" />
+                                        <x-store.icon name="chevron-end" class="size-5 ltr:-scale-x-100" />
                                     </button>
                                     <button type="button" class="inline-flex size-11 items-center justify-center rounded-full bg-white/90 text-ink transition hover:bg-volt" @click="next()" aria-label="{{ __('storefront.product.gallery_next') }}">
-                                        <x-store.icon name="chevron-start" class="size-5" />
+                                        <x-store.icon name="chevron-start" class="size-5 ltr:-scale-x-100" />
                                     </button>
                                 </div>
                             </div>

@@ -23,7 +23,7 @@
     @if ($actionUrl && $actionLabel)
         <a href="{{ $actionUrl }}" class="btn-outline btn-sm shrink-0 self-start sm:self-auto">
             {{ $actionLabel }}
-            <x-store.icon name="arrow-left" class="size-4" />
+            <x-store.icon name="arrow-left" class="size-4 ltr:-scale-x-100" />
         </a>
     @endif
 </div>

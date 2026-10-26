@@ -54,7 +54,7 @@ Edit `.env`:
 | `APP_ENV` | `local` for development. |
 | `APP_DEBUG` | `true` locally; `false` in production. |
 | `APP_TIMEZONE` | Defaults to `Asia/Riyadh`. |
-| `APP_LOCALE` | `ar` (Arabic RTL). |
+| `APP_LOCALE` | Default interface locale when a visitor has not chosen one: `ar` (Arabic RTL) or `en` (English LTR). |
 | `SEED_ADMIN_EMAIL` | Optional; required only to create the first admin. |
 | `SEED_ADMIN_PASSWORD` | Optional; use a strong temporary password and remove afterwards. |
 | `STORE_WHATSAPP_NUMBER` | Optional; can be set later in admin settings. |

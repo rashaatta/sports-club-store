@@ -53,14 +53,14 @@
                             <li>
                                 <a href="{{ route('pages.show', $otherPage) }}" class="flex items-center justify-between gap-3 py-2.5 text-xs font-semibold text-muted transition hover:text-ink">
                                     {{ $otherPage->title }}
-                                    <x-store.icon name="chevron-start" class="size-3.5 shrink-0" />
+                                    <x-store.icon name="chevron-start" class="size-3.5 shrink-0 ltr:-scale-x-100" />
                                 </a>
                             </li>
                         @endforeach
                         <li>
                             <a href="{{ route('faq') }}" class="flex items-center justify-between gap-3 py-2.5 text-xs font-semibold text-muted transition hover:text-ink">
                                 {{ __('storefront.nav.faq') }}
-                                <x-store.icon name="chevron-start" class="size-3.5 shrink-0" />
+                                <x-store.icon name="chevron-start" class="size-3.5 shrink-0 ltr:-scale-x-100" />
                             </a>
                         </li>
                     </ul>

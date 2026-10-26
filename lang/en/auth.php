@@ -1,20 +1,43 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'login_title' => 'Sign in',
+    'login_subtitle' => 'Store team access',
+    'login_intro' => 'This area is reserved for the store team. Enter your credentials to continue to the dashboard.',
+    'email' => 'Email',
+    'email_placeholder' => 'name@store.com',
+    'password_label' => 'Password',
+    'password_placeholder' => 'Enter your password',
+    'remember' => 'Remember me',
+    'forgot' => 'Forgot your password?',
+    'login' => 'Sign in to dashboard',
+    'logging_in' => 'Signing in…',
+    'back_store' => 'Back to store',
+    'secure_note' => 'Encrypted connection. Never share your sign-in details.',
+    'forgot_title' => 'Reset password',
+    'forgot_intro' => 'Enter your email and we will send you a password reset link.',
+    'email_reset_link' => 'Send reset link',
+    'reset_title' => 'Set a new password',
+    'reset_intro' => 'Choose a strong password of at least 8 characters.',
+    'new_password' => 'New password',
+    'confirm_password' => 'Confirm password',
+    'reset_action' => 'Save password',
+    'confirm_title' => 'Confirm password',
+    'confirm_intro' => 'This area is protected. Confirm your password to continue.',
+    'confirm_action' => 'Confirm',
+    'logout' => 'Sign out',
+    'verify_title' => 'Verify your email',
+    'verify_intro' => 'Please verify your email using the link we sent you.',
+    'verify_sent' => 'A new verification link has been sent to your email.',
+    'verify_resend' => 'Resend verification link',
+    'throttled' => 'Please wait before trying again.',
+    'credentials_error' => 'Unable to sign in. Check your email and password.',
+    'welcome_back' => 'Welcome back, :name.',
+    'logged_out' => 'You have been signed out.',
+    'reset_sent' => 'If the email is registered, you will receive a password reset message.',
+    'reset_success' => 'Your password has been reset. You can sign in now.',
+    'permission_denied' => 'You do not have permission to access this page.',
 ];

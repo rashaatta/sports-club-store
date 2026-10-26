@@ -173,6 +173,7 @@ Set `MEDIA_DISK=s3` and the `AWS_*` variables. The same disk is used for product
 
 - [ ] `https://<domain>/up` returns a healthy response.
 - [ ] Home page, catalog, a category, a product page, About, Contact, FAQ, and a policy page render over HTTPS.
+- [ ] Switch to English from the header, confirm the layout is LTR and the choice persists after reload, then switch back to Arabic (RTL). Repeat once in the admin sidebar.
 - [ ] `/sitemap.xml` and `/robots.txt` resolve with the production domain.
 - [ ] Admin login works; an incorrect password is throttled.
 - [ ] Create/edit a product, upload an image, and confirm it displays on the storefront.

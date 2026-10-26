@@ -38,7 +38,7 @@
         </form>
 
         <a href="{{ route('login') }}" class="mt-5 flex items-center justify-center gap-2 text-xs font-bold text-muted transition hover:text-ink">
-            <x-store.icon name="arrow-right" class="size-3.5" />
+            <x-store.icon name="arrow-right" class="size-3.5 ltr:-scale-x-100" />
             {{ __('auth.login_title') }}
         </a>
     </div>

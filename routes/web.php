@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\Storefront\CategoryController;
 use App\Http\Controllers\Storefront\ContactController;
 use App\Http\Controllers\Storefront\HomeController;
@@ -10,6 +11,10 @@ use App\Http\Controllers\Storefront\WhatsAppOrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
+
+Route::get('/locale/{locale}', LocaleController::class)
+    ->whereIn('locale', array_keys((array) config('store.locales', [])))
+    ->name('locale.switch');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');

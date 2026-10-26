@@ -112,6 +112,10 @@
             <circle cx="12" cy="12" r="9" />
             <path d="M12 7v5l3 2" />
             @break
+        @case('globe')
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" />
+            @break
         @case('alert')
             <path d="M12 3 2.5 20h19L12 3Z" />
             <path d="M12 9v5m0 3v.01" />

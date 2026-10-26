@@ -94,7 +94,7 @@
                     <div class="mt-8 flex flex-wrap items-center gap-3" data-reveal>
                         <a href="{{ route('products.index') }}" class="btn-volt btn-lg">
                             {{ $heroCta }}
-                            <x-store.icon name="arrow-left" class="size-4" />
+                            <x-store.icon name="arrow-left" class="size-4 ltr:-scale-x-100" />
                         </a>
                         @if ($whatsappUrl)
                             <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn-lg border border-white/25 text-white hover:border-white hover:bg-white hover:text-ink">
@@ -176,7 +176,7 @@
                                     <h3 class="mt-1 text-lg font-extrabold text-white sm:text-xl">{{ $category->name }}</h3>
                                 </div>
                                 <span class="flex size-9 shrink-0 items-center justify-center rounded-full border border-white/30 text-white transition group-hover:border-volt group-hover:bg-volt group-hover:text-ink">
-                                    <x-store.icon name="arrow-left" class="size-4" />
+                                    <x-store.icon name="arrow-left" class="size-4 ltr:-scale-x-100" />
                                 </span>
                             </div>
                         </a>
@@ -236,7 +236,7 @@
                             @if ($bannerUrl)
                                 <a href="{{ $bannerUrl }}" class="btn-white btn-sm mt-5 self-start">
                                     {{ $banner->button_label ?: __('storefront.home.promo_default_button') }}
-                                    <x-store.icon name="arrow-left" class="size-4" />
+                                    <x-store.icon name="arrow-left" class="size-4 ltr:-scale-x-100" />
                                 </a>
                             @endif
                         </div>
@@ -337,7 +337,7 @@
 
                         <a href="{{ route('about') }}" class="btn-primary mt-8">
                             {{ __('storefront.home.about_cta') }}
-                            <x-store.icon name="arrow-left" class="size-4" />
+                            <x-store.icon name="arrow-left" class="size-4 ltr:-scale-x-100" />
                         </a>
                     </div>
                 </div>
@@ -359,7 +359,7 @@
                     </div>
                     <a href="{{ route('faq') }}" class="btn btn-sm self-start border border-white/20 text-white hover:border-volt hover:text-volt sm:self-auto">
                         {{ __('storefront.nav.faq') }}
-                        <x-store.icon name="arrow-left" class="size-4" />
+                        <x-store.icon name="arrow-left" class="size-4 ltr:-scale-x-100" />
                     </a>
                 </div>
 
@@ -417,7 +417,7 @@
                             @else
                                 <a href="{{ route('contact') }}" class="btn-primary btn-lg">
                                     {{ __('storefront.nav.contact') }}
-                                    <x-store.icon name="arrow-left" class="size-4" />
+                                    <x-store.icon name="arrow-left" class="size-4 ltr:-scale-x-100" />
                                 </a>
                             @endif
                             <a href="{{ route('products.index') }}" class="btn btn-lg border border-ink/20 hover:border-ink hover:bg-ink hover:text-white">

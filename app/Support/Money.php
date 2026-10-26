@@ -12,6 +12,10 @@ final class Money
 
         $symbol = $symbol ?? StoreSetting::get('currency_symbol', 'ر.س');
 
+        if ($symbol === 'ر.س' && app()->getLocale() === 'en') {
+            $symbol = 'SAR';
+        }
+
         return $symbol !== '' ? $formatted.' '.$symbol : $formatted;
     }
 

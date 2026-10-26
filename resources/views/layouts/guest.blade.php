@@ -45,12 +45,15 @@
         </section>
 
         <section class="flex min-h-screen flex-col bg-smoke">
-            <div class="flex items-center justify-between p-5 lg:hidden">
-                <a href="{{ route('home') }}" class="flex items-center gap-2.5">
+            <div class="flex items-center justify-between gap-3 p-5">
+                <a href="{{ route('home') }}" class="flex items-center gap-2.5 lg:hidden">
                     <span class="flex size-9 items-center justify-center rounded-lg bg-ink font-display text-xl leading-none text-volt">S</span>
                     <span class="font-display text-2xl leading-none">{{ $storeName }}</span>
                 </a>
-                <span class="text-[11px] font-bold text-muted">{{ __('admin.brand.panel') }}</span>
+                <div class="ms-auto flex items-center gap-3">
+                    <span class="hidden text-[11px] font-bold text-muted lg:inline">{{ __('admin.brand.panel') }}</span>
+                    <x-language-switcher />
+                </div>
             </div>
 
             <div class="flex flex-1 items-center justify-center px-4 py-10 sm:px-8">
@@ -61,7 +64,7 @@
 
             <div class="p-5 text-center">
                 <a href="{{ route('home') }}" class="inline-flex items-center gap-2 text-xs font-bold text-muted transition hover:text-ink">
-                    <x-store.icon name="arrow-right" class="size-3.5 rotate-180" />
+                    <x-store.icon name="arrow-right" class="size-3.5 ltr:-scale-x-100" />
                     {{ __('auth.back_store') }}
                 </a>
             </div>

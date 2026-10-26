@@ -25,6 +25,7 @@ Permissions are checked server-side on every route and controller. Hiding a menu
 3. After login you land on `/admin`.
 4. Use the link in the sidebar/header to open the storefront.
 5. **Profile** (sidebar footer or `/admin/profile`) lets you update your name/email and change your password.
+6. Use **Language** in the sidebar footer (on the login page before signing in) to switch the admin interface between Arabic and English. The choice is remembered per browser; the storefront uses the same preference.
 
 Use **Log out** at the bottom of the sidebar on shared devices.
 

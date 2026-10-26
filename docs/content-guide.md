@@ -91,11 +91,13 @@ Product copy should answer: what it is, materials, fit, intended use, and care. 
 
 Filtered and search-result catalog URLs are set to `noindex,follow` automatically; the clean catalog and category pages remain indexable.
 
-## Arabic and RTL notes
+## Language, Arabic and RTL notes
 
-- The interface is Arabic RTL. Prices, SKUs, and Latin brand names render inside RTL text with direction-aware utilities.
-- Use Arabic punctuation and readable line lengths. The typography uses Cairo for body text and Anton for display headings.
-- The layout uses CSS logical properties, so a future English/LTR locale can be enabled through configuration and translations. English storefront/admin translation files are **not** included in this delivery.
+- The interface is bilingual: visitors switch between Arabic (RTL) and English (LTR) from the header, mobile menu, login pages, and admin sidebar. The choice is remembered per browser.
+- Catalog and page **content is single-language**. Names, descriptions, categories, pages, banners, FAQs, and SEO text are stored once and are not translated per locale. If you write them in Arabic, English visitors see Arabic content inside an English interface, and vice versa.
+- Prices, SKUs, and Latin brand names render inside Arabic text with direction-aware utilities. The currency symbol changes from `ر.س` to `SAR` in English; amounts are not converted.
+- Use Arabic punctuation and readable line lengths in Arabic content. Typography uses Cairo for body text and Anton for display headings in both directions.
+- The layout uses CSS logical properties and LTR/RTL variants, so direction-sensitive icons and the admin sidebar adapt automatically. Test both directions when adding custom markup.
 
 ## What not to publish
 

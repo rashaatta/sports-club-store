@@ -23,7 +23,7 @@ On a product page:
 2. Choose a quantity (1 up to the smallest of available stock, the configured maximum, and 20 by default).
 3. Press the order button.
 4. The browser opens a blank tab, then POSTs the selection to the server.
-5. On success, the blank tab navigates to WhatsApp with a prefilled Arabic message. If popups are blocked, the current tab is used.
+5. On success, the blank tab navigates to WhatsApp with a prefilled message in the customer's active interface language (Arabic or English). If popups are blocked, the current tab is used.
 6. On failure, the tab closes and an inline error explains the problem.
 
 For simple products, stock and price come from the product. For variant products, price comes from the variant override when present, otherwise from the product.

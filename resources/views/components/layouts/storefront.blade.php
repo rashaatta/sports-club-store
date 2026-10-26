@@ -24,6 +24,8 @@
     $preloadSrcset = filled($preloadImage) ? media_srcset($preloadImage) : null;
     $preloadUrl = filled($preloadImage) ? media_url($preloadImage) : null;
     $jsonFlags = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT;
+    $ogLocale = app()->getLocale() === 'ar' ? 'ar_SA' : 'en_US';
+    $ogAlternate = app()->getLocale() === 'ar' ? 'en_US' : 'ar_SA';
 @endphp
 
 <!DOCTYPE html>
@@ -44,7 +46,8 @@
     <meta property="og:title" content="{{ $pageTitle }}">
     <meta property="og:description" content="{{ Str::limit(strip_tags($metaDescription), 158) }}">
     <meta property="og:url" content="{{ $pageCanonical }}">
-    <meta property="og:locale" content="ar_SA">
+    <meta property="og:locale" content="{{ $ogLocale }}">
+    <meta property="og:locale:alternate" content="{{ $ogAlternate }}">
     @if ($ogImageUrl)
         <meta property="og:image" content="{{ $ogImageUrl }}">
         <meta name="twitter:image" content="{{ $ogImageUrl }}">

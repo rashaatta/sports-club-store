@@ -90,7 +90,7 @@
                                     <div class="rounded-xl p-3 transition hover:bg-smoke">
                                         <a href="{{ route('categories.show', $category) }}" class="flex items-start justify-between gap-2 text-sm font-extrabold text-ink">
                                             {{ $category->name }}
-                                            <x-store.icon name="arrow-left" class="mt-0.5 size-4 shrink-0 text-muted" />
+                                            <x-store.icon name="arrow-left" class="mt-0.5 size-4 shrink-0 text-muted ltr:-scale-x-100" />
                                         </a>
                                         @if ($category->children->isNotEmpty())
                                             <ul class="mt-2 space-y-1">
@@ -108,7 +108,7 @@
                             </div>
                             <a href="{{ route('products.index') }}" class="mt-3 flex items-center justify-center gap-2 rounded-xl bg-smoke px-4 py-3 text-xs font-bold text-ink transition hover:bg-line/70">
                                 {{ __('storefront.catalog.all_products') }}
-                                <x-store.icon name="arrow-left" class="size-4" />
+                                <x-store.icon name="arrow-left" class="size-4 ltr:-scale-x-100" />
                             </a>
                         @else
                             <p class="p-4 text-sm text-muted">{{ __('storefront.home.categories_empty') }}</p>
@@ -129,6 +129,10 @@
         </div>
 
         <div class="flex items-center gap-1.5 sm:gap-2">
+            <span class="hidden sm:block">
+                <x-language-switcher />
+            </span>
+
             <button
                 type="button"
                 class="icon-btn text-ink hover:bg-smoke"
@@ -250,15 +254,15 @@
                     <div class="space-y-1">
                         <a href="{{ route('home') }}" class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-bold hover:bg-smoke">
                             {{ __('storefront.nav.home') }}
-                            <x-store.icon name="chevron-start" class="size-4 text-muted" />
+                            <x-store.icon name="chevron-start" class="size-4 text-muted ltr:-scale-x-100" />
                         </a>
                         <a href="{{ route('products.index') }}" class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-bold hover:bg-smoke">
                             {{ __('storefront.nav.shop') }}
-                            <x-store.icon name="chevron-start" class="size-4 text-muted" />
+                            <x-store.icon name="chevron-start" class="size-4 text-muted ltr:-scale-x-100" />
                         </a>
                         <a href="{{ route('products.index', ['on_sale' => 1]) }}" class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-bold hover:bg-smoke">
                             {{ __('storefront.nav.offers') }}
-                            <x-store.icon name="chevron-start" class="size-4 text-muted" />
+                            <x-store.icon name="chevron-start" class="size-4 text-muted ltr:-scale-x-100" />
                         </a>
                     </div>
 
@@ -302,24 +306,29 @@
                     <div class="mt-6 space-y-1">
                         <a href="{{ route('about') }}" class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-bold hover:bg-smoke">
                             {{ __('storefront.nav.about') }}
-                            <x-store.icon name="chevron-start" class="size-4 text-muted" />
+                            <x-store.icon name="chevron-start" class="size-4 text-muted ltr:-scale-x-100" />
                         </a>
                         <a href="{{ route('contact') }}" class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-bold hover:bg-smoke">
                             {{ __('storefront.nav.contact') }}
-                            <x-store.icon name="chevron-start" class="size-4 text-muted" />
+                            <x-store.icon name="chevron-start" class="size-4 text-muted ltr:-scale-x-100" />
                         </a>
                         <a href="{{ route('faq') }}" class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-bold hover:bg-smoke">
                             {{ __('storefront.nav.faq') }}
-                            <x-store.icon name="chevron-start" class="size-4 text-muted" />
+                            <x-store.icon name="chevron-start" class="size-4 text-muted ltr:-scale-x-100" />
                         </a>
                         @auth
                             <a href="{{ route('admin.dashboard') }}" class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-bold hover:bg-smoke">
                                 {{ __('storefront.nav.admin') }}
-                                <x-store.icon name="chevron-start" class="size-4 text-muted" />
+                                <x-store.icon name="chevron-start" class="size-4 text-muted ltr:-scale-x-100" />
                             </a>
                         @endauth
                     </div>
                 </nav>
+
+                <div class="mt-6 flex items-center justify-between gap-3 rounded-xl border border-line px-3 py-2">
+                    <span class="text-sm font-bold">{{ __('ui.language.label') }}</span>
+                    <x-language-switcher />
+                </div>
 
                 <div class="mt-7 rounded-2xl bg-smoke p-5">
                     <p class="text-sm font-extrabold">{{ __('storefront.header.menu_title') }}</p>

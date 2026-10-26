@@ -14,13 +14,7 @@ enum Role: string
 
     public function label(): string
     {
-        return match ($this) {
-            self::SuperAdmin => 'مدير عام',
-            self::StoreManager => 'مدير المتجر',
-            self::ProductManager => 'مسؤول منتجات',
-            self::InventoryManager => 'مسؤول مخزون',
-            self::ContentManager => 'مسؤول محتوى',
-        };
+        return __('admin.roles.'.$this->value);
     }
 
     /**

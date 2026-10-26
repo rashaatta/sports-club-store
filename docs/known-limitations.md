@@ -13,7 +13,8 @@ This document separates intentional scope decisions from gaps to address before 
 
 - The seeded catalog, images, banners, FAQ, About, and policy pages are **demo placeholders**. Replace them with real business content and legally reviewed policies.
 - No sales counts, customer reviews, ratings, certifications, or performance claims are included. Do not add unsupported claims.
-- The storefront/admin UI is Arabic-only. Locale configuration and logical CSS properties are in place, but `lang/en` does not include storefront or admin translations, and there is no language switcher. English support requires translation and a locale-selection mechanism.
+- The interface is bilingual (Arabic RTL / English LTR), but database content is **single-language**. Product names, descriptions, categories, pages, banners, FAQs, store settings, and SEO fields are stored once; they are not translated per locale. There is no per-field translation UI. Write content in the language most of your audience reads, or keep separate pages for languages you must publish.
+- Locale is stored in the session and an encrypted one-year cookie rather than in the URL. There are no language-prefixed URLs, per-locale canonicals, or `hreflang` links; search engines see one URL with cookie-dependent UI. Add localized routes if full bilingual SEO is required.
 - There is no product import/export (CSV) and no bulk-edit UI.
 - One store-wide currency is configured by code/symbol; amounts are not converted and products cannot use different currencies.
 - Search uses SQL `LIKE` over name, SKU, brand, and short description. There is no full-text index, typo tolerance, or synonym handling; very large catalogs may need a search service.

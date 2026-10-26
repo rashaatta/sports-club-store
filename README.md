@@ -1,6 +1,6 @@
 # SQUAD — Arabic-first sports store with WhatsApp ordering
 
-A production-oriented, Arabic-first RTL e-commerce storefront for a sports club shop (footwear, jerseys and tees, training sets, accessories), paired with a role-based admin panel. Orders are completed through WhatsApp: there is **no checkout, payment gateway, or customer account area**.
+A production-oriented, bilingual (Arabic RTL / English LTR) e-commerce storefront for a sports club shop (footwear, jerseys and tees, training sets, accessories), paired with a role-based admin panel. Orders are completed through WhatsApp: there is **no checkout, payment gateway, or customer account area**.
 
 The application was built and verified locally on Windows with PHP 8.4.5. It has **not** been deployed; deployment configuration and manual steps are documented in [docs/deployment.md](docs/deployment.md).
 
@@ -24,10 +24,11 @@ The application was built and verified locally on Windows with PHP 8.4.5. It has
 ### Storefront
 
 - Arabic RTL homepage with configurable hero, featured categories, featured/new/sale products, about section, and WhatsApp CTA.
+- Complete Arabic/English interface with a language switcher in the header, mobile menu, auth pages, and admin sidebar. The choice persists per browser and the layout switches between RTL and LTR.
 - All-products catalog with server-side search, category, price, size, color, availability, featured and sale filters, sorting, pagination, active filter chips, and clear-all.
 - Nested category pages (a parent category includes descendants).
 - Product page with responsive gallery, click-to-zoom dialog, variant selection (size/color), stock state, required-option validation, share links, specifications, related products, and optional 3D viewer.
-- WhatsApp order flow: the server validates the product, variant, price source, stock, and quantity, then redirects to an official `wa.me` link with a prefilled Arabic message.
+- WhatsApp order flow: the server validates the product, variant, price source, stock, and quantity, then redirects to an official `wa.me` link with a prefilled message in the active interface language.
 - About, Contact (validated, honeypot-protected form stored in the database), FAQ, and configurable policy pages.
 - Branded 404/403/419/429/500/503 pages, sitemap, robots, canonical/OG metadata, and Product/Breadcrumb JSON-LD.
 - Mobile-first layout with keyboard-accessible overlays, focus management, scroll locking, and reduced-motion support.
@@ -48,6 +49,13 @@ The application was built and verified locally on Windows with PHP 8.4.5. It has
 - Upload validation by real MIME type and dimensions, content validation for 3D files, sanitized rich text, escaped Blade output, safe external URL handling.
 - Security headers (nosniff, frame options, referrer policy, permissions policy, COOP, HSTS when HTTPS).
 - Indexable pages use canonical URLs and metadata; filtered/search pages are `noindex,follow`. Inactive and deleted records are excluded from the storefront and sitemap.
+
+### Localization
+
+- Supported locales are defined in `config/store.php`: Arabic (`ar`, RTL) and English (`en`, LTR). `APP_LOCALE` sets the fallback when a visitor has no stored preference.
+- Switching is handled by `/locale/{locale}` with a validated local redirect, so visitors stay on the page they were viewing. The locale is stored in the session and in an encrypted one-year cookie.
+- Storefront, auth, admin, validation, and WhatsApp message copy are fully translated. Currency displays as `ر.س` in Arabic and `SAR` in English; amounts are not converted.
+- Catalog content stored in the database (product names, categories, pages, banners, FAQs, settings, and SEO fields) is entered once and is not per-locale. The interface language and the content language can therefore differ.
 
 ## Requirements
 
@@ -142,7 +150,7 @@ vendor/bin/pint --test
 npm run build
 ```
 
-Last verified locally: **101 tests, 493 assertions passing** (Pest), plus 48 automated browser checks at 390×844 and 1440×900 and a separate 3D/gallery browser check. Details are in [docs/final-report.md](docs/final-report.md).
+Last verified locally: **115 tests, 542 assertions passing** (Pest), plus 48 storefront browser checks and 39 bilingual/LTR checks at 390×844 and 1440×900, and a separate 3D/gallery browser check. Details are in [docs/final-report.md](docs/final-report.md).
 
 ## Documentation
 
@@ -159,7 +167,7 @@ Last verified locally: **101 tests, 493 assertions passing** (Pest), plus 48 aut
 
 - Not deployed; hosting credentials were not provided.
 - Demo catalog/content must be replaced; no customer reviews or sales figures are included.
-- Arabic UI only. Locale configuration and RTL/LTR direction handling exist, but English storefront/admin translation files are not provided.
+- Arabic and English interfaces are included, but database content is single-language: product/category/page/SEO text is entered once and is not translated per locale. There are no localized URLs or `hreflang` links.
 - No online payments, checkout, customer accounts, or automatic stock decrement (by design).
 - No Content-Security-Policy is set by the app; configure one at the web server/CDN if required.
 - The 3D `model-viewer` chunk is ~1,025 kB (~291 kB gzip) and is loaded only when a visitor opens a product 3D view.
