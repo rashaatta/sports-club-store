@@ -35,6 +35,8 @@
 | --- | --- |
 | Pest feature suite (`php artisan test`) | **101 passed, 493 assertions** |
 | Laravel Pint (`pint --test`) | **149 files pass** |
+| Composer validation | Valid; `composer.lock` in sync |
+| Config cache (`config:cache` → boot → `config:clear`) | Success; app and routes boot normally |
 | Production build (`npm run build`) | Success; Vite 8.3.5 |
 | Browser QA (headless Chrome) | **48 checks passed** at 390×844 and 1440×900 |
 | Gallery + 3D viewer QA | **9 checks passed**, including gallery arrows, zoom focus, 3D load, Escape, focus restore |
